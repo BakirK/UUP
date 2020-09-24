@@ -1,0 +1,122 @@
+{
+    "id": 5587,
+    "name": "Osnove ra\u010dunarstva (2018\/2019), Ispit 3, zadatak 4",
+    "language": "C",
+    "preferred_compiler": "gcc",
+    "required_compiler": "gcc",
+    "compiler_features": [],
+    "compiler_options": "-O1 -Wall -Wuninitialized -Winit-self -Wno-unused-result -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-ggdb -lm -pass-exit-codes",
+    "profile": "true",
+    "debug": "true",
+    "test": "true",
+    "compile": "true",
+    "run": "false",
+    "test_specifications": [
+        {
+            "id": 1,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT1: Osnovni test *\/\nstruct Student nizz[] = {\n\t{ \"Sara\", \"Sarac\", { 18, 2, 1998} },\n\t{ \"Pero\", \"Peric\", { 31, 11, 1999} },\n\t{ \"Aleksandar\", \"Sasic\", { 31, 12, 1997} },\n\t{ \"Ana-Marija\", \"Anic-Marijic\", { 1, 1, 1999} }\n};\nzapisi(nizz, 4);\n\n\/* Za razliku od studenata, ja smijem promijeniti definiciju strukture >:) *\/\nstruct nStudent {\n\tchar ime[20], prezime[20];\n\tunsigned char dan, mjesec;\n\tunsigned short godina;\n} niz[100];\nFILE* ulaz = fopen(\"studenti.dat\", \"rb\");\nint vel = fread(niz, sizeof(struct nStudent), 100, ulaz);\nfclose(ulaz);\n\nint i;\nfor (i=0; i<vel; i++)\n\tprintf(\"%d. '%s' '%s' - %d. %d. %d.\\n\", i+1, niz[i].ime, niz[i].prezime, niz[i].dan, niz[i].mjesec, niz[i].godina);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1. 'Sara' 'Sarac' - 18. 2. 1998.\\n2. 'Pero' 'Peric' - 31. 11. 1999.\\n3. 'Aleksandar' 'Sasic' - 31. 12. 1997.\\n4. 'Ana-Marija' 'Anic-Marijic' - 1. 1. 1999."
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT2: Radi li sa datotekom velicine nula? *\/\nstruct Student nizz[] = {\n    { \"Sara\", \"Sarac\", { 18, 2, 1998} },\n    { \"Pero\", \"Peric\", { 31, 11, 1999} },\n    { \"Aleksandar\", \"Sasic\", { 31, 12, 1997} },\n    { \"Ana-Marija\", \"Anic-Marijic\", { 1, 1, 1999} }\n};\nzapisi(nizz, 0);\n\n\/* Za razliku od studenata, ja smijem promijeniti definiciju strukture >:) *\/\nstruct nStudent {\n    char ime[20], prezime[20];\n    unsigned char dan, mjesec;\n    unsigned short godina;\n} niz[100];\nFILE* ulaz = fopen(\"studenti.dat\", \"rb\");\nint vel = fread(niz, sizeof(struct nStudent), 100, ulaz);\nfclose(ulaz);\nprintf(\"Vel: %d\\n\", vel);\n",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Vel: 0"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT3: Radi li izmjena? *\/\nstruct Student nizz[] = {\n\t{ \"Sara\", \"Sarac\", { 18, 2, 1998} },\n\t{ \"Pero\", \"Peric\", { 31, 11, 1999} },\n\t{ \"Aleksandar\", \"Sasic\", { 31, 12, 1997} },\n\t{ \"Ana-Marija\", \"Anic-Marijic\", { 1, 1, 1999} }\n};\nzapisi(nizz, 4);\n\nstruct Student izmjena = { \"Meho\", \"Mehic\", { 1, 1, 1998} };\npromijeni(izmjena, 2);\n\nstruct nStudent {\n\tchar ime[20], prezime[20];\n\tunsigned char dan, mjesec;\n\tunsigned short godina;\n} niz[100];\nFILE* ulaz = fopen(\"studenti.dat\", \"rb\");\nint vel = fread(niz, sizeof(struct nStudent), 100, ulaz);\nfclose(ulaz);\n\nint i;\nfor (i=0; i<vel; i++)\n\tprintf(\"%d. '%s' '%s' - %d. %d. %d.\\n\", i+1, niz[i].ime, niz[i].prezime, niz[i].dan, niz[i].mjesec, niz[i].godina);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1. 'Sara' 'Sarac' - 18. 2. 1998.\\n2. 'Pero' 'Peric' - 31. 11. 1999.\\n3. 'Meho' 'Mehic' - 1. 1. 1998.\\n4. 'Ana-Marija' 'Anic-Marijic' - 1. 1. 1999."
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 4,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT4: Izmjena elementa nakon posljednjeg ce kao efekat dati dodavanje *\/\nstruct Student nizz[] = {\n    { \"Sara\", \"Sarac\", { 18, 2, 1998} },\n    { \"Pero\", \"Peric\", { 31, 11, 1999} },\n    { \"Aleksandar\", \"Sasic\", { 31, 12, 1997} },\n    { \"Ana-Marija\", \"Anic-Marijic\", { 1, 1, 1999} }\n};\nzapisi(nizz, 4);\n\nstruct Student izmjena = { \"Meho\", \"Mehic\", { 1, 1, 1998} };\npromijeni(izmjena, 4);\n\nstruct nStudent {\n    char ime[20], prezime[20];\n    unsigned char dan, mjesec;\n    unsigned short godina;\n} niz[100];\nFILE* ulaz = fopen(\"studenti.dat\", \"rb\");\nint vel = fread(niz, sizeof(struct nStudent), 100, ulaz);\nfclose(ulaz);\n\nint i;\nfor (i=0; i<vel; i++)\n    printf(\"%d. '%s' '%s' - %d. %d. %d.\\n\", i+1, niz[i].ime, niz[i].prezime, niz[i].dan, niz[i].mjesec, niz[i].godina);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "1. 'Sara' 'Sarac' - 18. 2. 1998.\\n2. 'Pero' 'Peric' - 31. 11. 1999.\\n3. 'Aleksandar' 'Sasic' - 31. 12. 1997.\\n4. 'Ana-Marija' 'Anic-Marijic' - 1. 1. 1999.\\n5. 'Meho' 'Mehic' - 1. 1. 1998."
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 5,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT5: Veliki niz *\/\nstruct Student nizz[1000];\nint i;\nstruct Datum d = { 1, 1, 2000 };\nfor (i=0; i<1000; i++) {\n\tstrcpy (nizz[i].ime, \"Fata\");\n\tstrcpy (nizz[i].prezime, \"Fatic\");\n\tnizz[i].datum_rodjenja = d;\n}\nstrcpy (nizz[999].ime, \"Fatima\");\nzapisi(nizz, 1000);\n\nstruct Student izmjena = { \"Meho\", \"Mehic\", { 1, 1, 1998} };\npromijeni(izmjena, 997);\n\nstruct nStudent {\n\tchar ime[20], prezime[20];\n\tunsigned char dan, mjesec;\n\tunsigned short godina;\n} niz[1000];\nFILE* ulaz = fopen(\"studenti.dat\", \"rb\");\nint vel = fread(niz, sizeof(struct nStudent), 1000, ulaz);\nfclose(ulaz);\n\nprintf(\"Vel: %d\\n\", vel);\nprintf(\"'%s' '%s'\\n\", niz[999].ime, niz[997].prezime);\nprintf(\"%d %d %d\", niz[999].godina, niz[997].godina, niz[997].dan);",
+            "global_above_main": "",
+            "global_top": "#include <string.h>",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Vel: 1000\\n'Fatima' 'Mehic'\\n2000 1998 1"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

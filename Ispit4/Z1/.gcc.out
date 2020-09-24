@@ -1,0 +1,4 @@
+/rhome/b/bkarovic1/workspace/UUP/Ispit4/Z1/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/Ispit4/Z1/main.c:52:13: warning: too many arguments for format [-Wformat-extra-args]
+     printf ("Vel: %d\n", vel, *niz2);
+             ^~~~~~~~~~~

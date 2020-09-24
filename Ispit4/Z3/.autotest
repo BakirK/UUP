@@ -1,0 +1,169 @@
+{
+    "id": 234421,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Ispit 5, Zadatak 4",
+    "language": "C",
+    "required_compiler": "gcc",
+    "preferred_compiler": "gcc",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 3057,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\t\/* AT1: Pokriva sve sto je bitno :) *\/\n\tstruct Osoba niz1[5] = {{\"Meho\", \"Mehic\"}, {\"Pero\", \"Peric\"}, {\"Mujo\", \"Mujic\"}, {\"Sara\", \"Sarac\"}, {\"Jozo\", \"Jozic\"}};\n\tstruct Drzava niz3[7] = {{\"BiH\", \"Sarajevo\", 111}, {\"Srbija\", \"Beograd\", 222}, {\"Hrvatska\", \"Zagreb\", 333}, \n\t\t{\"SAD\", \"Washington\", 444}, {\"Velika Britanija\", \"London\", 555}, {\"Francuska\", \"Pariz\", 666},\n\t\t{\"Rusija\", \"Moskva\", 777}};\n\tstruct Grad niz2[8] = {\n\t\t{\"Sarajevo\", 111, {\"Fata\", \"Fatic\"}},  \/* Izbacujemo - ne postoji Fata Fatic *\/\n\t\t{\"Tuzla\", 222, {\"Meho\", \"Mehic\"}}, \/* Izbacujemo - nije glavni grad *\/\n\t\t{\"Zagreb\", 333, {\"Jozo\", \"Jozic\"}}, \/* NE izbacujemo *\/\n\t\t{\"Beogradd\", 444, {\"Pero\", \"Peric\"}}, \/* Izbacujemo - tipfeler - viska d *\/\n\t\t{\"London\", 555, {\"Sara\", \"Mehic\"}}, \/* Izbacujemo - ne postoji Sara Mehic *\/\n\t\t{\"New York\", 666, {\"Sara\", \"Sarac\"}}, \/* Izbacujemo - nije glavni grad *\/\n\t\t{\"Washihinton\", 777, {\"Mujo\", \"Mujic\"}}, \/* Izbacujemo - vise tipfelera *\/\n\t\t{\"Pariz\", 888, {\"Mujo\", \"Mujic\"}} \/* NE izbacujemo *\/\n\t};\t\t\n\tint vel = samo_glavni(niz1, 5, niz2, 8, niz3, 7);\n\tint i;\n\tprintf(\"Vel: %d\\n\", vel);\n\tfor (i=0; i<vel; i++) {\n\t\tprintf(\"%s\\n\", niz2[i].naziv);\n\t}\n",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Vel: 2\\nZagreb\\nPariz"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3058,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\t\/* AT2: Surova trivijala *\/\n\tstruct Osoba niz1[1] = {{\"Meho\", \"Mehic\"}};\n\tstruct Grad niz2[2] = {{\"Sarajevo\", 111, {\"Meho\", \"Mehic\"}}, {\"Nema\", 0, {\"Nemo\", \"Nemic\"}}};\n\tstruct Drzava niz3[1] = {{\"BiH\", \"Sarajevo\", 111}};\n\t\t\n\tint vel = samo_glavni(niz1, 1, niz2, 2, niz3, 1);\n\tint i;\n\tprintf(\"Vel: %d\\n\", vel);\n\tfor (i=0; i<vel; i++) {\n\t\tprintf(\"%s\\n\", niz2[i].naziv);\n\t}\n",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Vel: 1\\nSarajevo"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3059,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT3: Rad sa praznim nizovima *\/\n    struct Osoba niz1[1] = {{\"Meho\", \"Mehic\"}};\n    struct Osoba prazan1[1];\n    struct Grad niz2[2] = {{\"Sarajevo\", 111, {\"Meho\", \"Mehic\"}}, {\"Nema\", 0, {\"Nemo\", \"Nemic\"}}};\n    struct Grad niz2a[2] = {{\"Sarajevo\", 111, {\"Meho\", \"Mehic\"}}, {\"Nema\", 0, {\"Nemo\", \"Nemic\"}}};\n    struct Grad niz2b[2] = {{\"Sarajevo\", 111, {\"Meho\", \"Mehic\"}}, {\"Nema\", 0, {\"Nemo\", \"Nemic\"}}};\n    struct Grad prazan2[1];\n    struct Drzava niz3[1] = {{\"BiH\", \"Sarajevo\", 111}};\n    struct Drzava prazan3[1];\n        \nint vel = samo_glavni(prazan1, 0, niz2, 2, niz3, 1);\nprintf(\"%d \", vel);\nvel = samo_glavni(niz1, 1, niz2a, 2, prazan3, 0);\nprintf(\"%d \", vel);\nvel = samo_glavni(niz1, 1, prazan2, 0, niz3, 1);\nprintf(\"%d \", vel);\nvel = samo_glavni(niz1, 1, niz2b, 2, niz3, 1);\nprintf(\"%d \", vel);\n",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "0 0 0 1 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3060,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT4: Unakrsno ime\/prezime *\/\n    struct Osoba niz1[2] = {{\"Meho\", \"Mehic\"}, {\"Pero\", \"Peric\"}};\n    struct Grad niz2[4] = {{\"Sarajevo\", 111, {\"Meho\", \"Mehic\"}}, \n        {\"Zagreb\", 333, {\"Pero\", \"Mehic\"}},\n        {\"Beograd\", 444, {\"Pero\", \"Peric\"}},\n        {\"London\", 555, {\"Meho\", \"Peric\"}}\n    };\n    struct Drzava niz3[4] = {{\"BiH\", \"Sarajevo\", 111}, {\"Srbija\", \"Beograd\", 222}, {\"Hrvatska\", \"Zagreb\", 333}, {\"Velika Britanija\", \"London\", 555}};\n        \n    int vel = samo_glavni(niz1, 2, niz2, 4, niz3, 4);\n    int i;\n    printf(\"Vel: %d\\n\", vel);\n    for (i=0; i<vel; i++) {\n        printf(\"%s\\n\", niz2[i].naziv);\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Vel: 2\\nSarajevo\\nBeograd"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3061,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT5: Ima drzava nema ime *\/\n    struct Osoba niz1[3] = {{\"Meho\", \"Mehic\"}, {\"Pero\", \"Peric\"}, {\"Sara\", \"Sarac\"}};\n    struct Grad niz2[4] = {{\"Sarajevo\", 111, {\"Meho\", \"Mehic\"}}, \n        {\"Zagreb\", 333, {\"Sara\", \"Sarac\"}},\n        {\"Beograd\", 444, {\"Pero\", \"Peric\"}},\n        {\"London\", 555, {\"Jozo\", \"Jozic\"}}\n    };\n    struct Drzava niz3[4] = {{\"BiH\", \"Sarajevo\", 111}, {\"Srbija\", \"Beograd\", 222},  {\"Hrvatska\", \"Zagreb\", 333}, {\"Velika Britanija\", \"London\", 555}};\n        \n    int vel = samo_glavni(niz1, 3, niz2, 4, niz3, 4);\n    int i;\n    printf(\"Vel: %d\\n\", vel);\n    for (i=0; i<vel; i++) {\n        printf(\"%s\\n\", niz2[i].naziv);\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Vel: 3\\nSarajevo\\nZagreb\\nBeograd"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3062,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT6: Ima ime nema drzava *\/\n    struct Osoba niz1[4] = {{\"Meho\", \"Mehic\"}, {\"Pero\", \"Peric\"}, {\"Sara\", \"Sarac\"}, {\"Jozo\", \"Jozic\"}};\n    struct Grad niz2[4] = {{\"Sarajevo\", 111, {\"Meho\", \"Mehic\"}}, \n        {\"Zagreb\", 333, {\"Sara\", \"Sarac\"}},\n        {\"Beograd\", 444, {\"Pero\", \"Peric\"}},\n        {\"London\", 555, {\"Jozo\", \"Jozic\"}}\n    };\n    struct Drzava niz3[3] = {{\"BiH\", \"Sarajevo\", 111}, {\"Srbija\", \"Beograd\", 222}, {\"Velika Britanija\", \"London\", 555}};\n        \n    int vel = samo_glavni(niz1, 4, niz2, 4, niz3, 3);\n    int i;\n    printf(\"Vel: %d\\n\", vel);\n    for (i=0; i<vel; i++) {\n        printf(\"%s\\n\", niz2[i].naziv);\n    }",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Vel: 3\\nSarajevo\\nBeograd\\nLondon"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

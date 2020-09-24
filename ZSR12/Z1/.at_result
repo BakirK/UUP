@@ -1,0 +1,195 @@
+{
+    "buildhost_description": {
+        "id": "lab002c01",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "gcc (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 4,
+    "compile_result": {
+        "status": 1,
+        "output": "main.c: In function ‘main’:\nmain.c:33:6: warning: unused variable ‘brojac’ [-Wunused-variable]\n  int brojac = 0;\n      ^~~~~~",
+        "parsed_output": [
+            {
+                "type": "warning",
+                "file": "main.c",
+                "line": "33",
+                "col": "6",
+                "message": "unused variable 'brojac'",
+                "output": "/tmp/buildservice/bs_6965/main.c:33:6: warning: unused variable ‘brojac’ [-Wunused-variable]  int brojac = 0;      ^~~~~~",
+                "code": "int brojac = 0;"
+            }
+        ]
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": {
+        "2126": {
+            "status": 6,
+            "run_result": {
+                "output": "Unesite znakove x i y: Pogresan unos",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": {
+                "output": "==24185== Memcheck, a memory error detector\n==24185== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.\n==24185== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info\n==24185== Command: bs_test_2126\n==24185== Parent PID: 24184\n==24185== \n==24185== Conditional jump or move depends on uninitialised value(s)\n==24185==    at 0x4006F3: _main (bs_test_2126.c:14)\n==24185==    by 0x4007D1: main (bs_test_2126.c:53)\n==24185== \n==24185== \n==24185== HEAP SUMMARY:\n==24185==     in use at exit: 0 bytes in 0 blocks\n==24185==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated\n==24185== \n==24185== All heap blocks were freed -- no leaks are possible\n==24185== \n==24185== For counts of detected and suppressed errors, rerun with: -v\n==24185== Use --track-origins=yes to see where uninitialised values come from\n==24185== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 4 from 4)\n",
+                "status": 3,
+                "parsed_output": [
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x4006F3: _main (bs_test_2126.c:14)\n    by 0x4007D1: main (bs_test_2126.c:53)\n",
+                        "file": "main.c",
+                        "line": 12
+                    }
+                ]
+            },
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "2127": {
+            "status": 6,
+            "run_result": {
+                "output": "Unesite znakove x i y: IZLAZNA:\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": {
+                "output": "==24203== Memcheck, a memory error detector\n==24203== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.\n==24203== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info\n==24203== Command: bs_test_2127\n==24203== Parent PID: 24202\n==24203== \n==24203== Conditional jump or move depends on uninitialised value(s)\n==24203==    at 0x400873: _main (bs_test_2127.c:14)\n==24203==    by 0x40098F: main (bs_test_2127.c:59)\n==24203== \n==24203== Conditional jump or move depends on uninitialised value(s)\n==24203==    at 0x400914: _main (bs_test_2127.c:39)\n==24203==    by 0x40098F: main (bs_test_2127.c:59)\n==24203== \n==24203== \n==24203== HEAP SUMMARY:\n==24203==     in use at exit: 1,136 bytes in 2 blocks\n==24203==   total heap usage: 4 allocs, 2 frees, 2,272 bytes allocated\n==24203== \n==24203== LEAK SUMMARY:\n==24203==    definitely lost: 0 bytes in 0 blocks\n==24203==    indirectly lost: 0 bytes in 0 blocks\n==24203==      possibly lost: 0 bytes in 0 blocks\n==24203==    still reachable: 1,136 bytes in 2 blocks\n==24203==         suppressed: 0 bytes in 0 blocks\n==24203== Reachable blocks (those to which a pointer was found) are not shown.\n==24203== To see them, rerun with: --leak-check=full --show-leak-kinds=all\n==24203== \n==24203== For counts of detected and suppressed errors, rerun with: -v\n==24203== Use --track-origins=yes to see where uninitialised values come from\n==24203== ERROR SUMMARY: 23 errors from 2 contexts (suppressed: 4 from 4)\n",
+                "status": 3,
+                "parsed_output": [
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400873: _main (bs_test_2127.c:14)\n    by 0x40098F: main (bs_test_2127.c:59)\n",
+                        "file": "main.c",
+                        "line": 12
+                    },
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400914: _main (bs_test_2127.c:39)\n    by 0x40098F: main (bs_test_2127.c:59)\n",
+                        "file": "main.c",
+                        "line": 37
+                    }
+                ]
+            },
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "2128": {
+            "status": 6,
+            "run_result": {
+                "output": "Unesite znakove x i y: Izlazna datoteka prazna!",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": {
+                "output": "==24221== Memcheck, a memory error detector\n==24221== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.\n==24221== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info\n==24221== Command: bs_test_2128\n==24221== Parent PID: 24220\n==24221== \n==24221== Conditional jump or move depends on uninitialised value(s)\n==24221==    at 0x4007E3: _main (bs_test_2128.c:14)\n==24221==    by 0x4008FF: main (bs_test_2128.c:59)\n==24221== \n==24221== Conditional jump or move depends on uninitialised value(s)\n==24221==    at 0x400884: _main (bs_test_2128.c:39)\n==24221==    by 0x4008FF: main (bs_test_2128.c:59)\n==24221== \n==24221== \n==24221== HEAP SUMMARY:\n==24221==     in use at exit: 1,136 bytes in 2 blocks\n==24221==   total heap usage: 4 allocs, 2 frees, 2,272 bytes allocated\n==24221== \n==24221== LEAK SUMMARY:\n==24221==    definitely lost: 0 bytes in 0 blocks\n==24221==    indirectly lost: 0 bytes in 0 blocks\n==24221==      possibly lost: 0 bytes in 0 blocks\n==24221==    still reachable: 1,136 bytes in 2 blocks\n==24221==         suppressed: 0 bytes in 0 blocks\n==24221== Reachable blocks (those to which a pointer was found) are not shown.\n==24221== To see them, rerun with: --leak-check=full --show-leak-kinds=all\n==24221== \n==24221== For counts of detected and suppressed errors, rerun with: -v\n==24221== Use --track-origins=yes to see where uninitialised values come from\n==24221== ERROR SUMMARY: 23 errors from 2 contexts (suppressed: 4 from 4)\n",
+                "status": 3,
+                "parsed_output": [
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x4007E3: _main (bs_test_2128.c:14)\n    by 0x4008FF: main (bs_test_2128.c:59)\n",
+                        "file": "main.c",
+                        "line": 12
+                    },
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400884: _main (bs_test_2128.c:39)\n    by 0x4008FF: main (bs_test_2128.c:59)\n",
+                        "file": "main.c",
+                        "line": 37
+                    }
+                ]
+            },
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "2129": {
+            "status": 6,
+            "run_result": {
+                "output": "Unesite znakove x i y: ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": {
+                "output": "==24239== Memcheck, a memory error detector\n==24239== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.\n==24239== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info\n==24239== Command: bs_test_2129\n==24239== Parent PID: 24238\n==24239== \n==24239== Conditional jump or move depends on uninitialised value(s)\n==24239==    at 0x400793: _main (bs_test_2129.c:14)\n==24239==    by 0x4008B8: main (bs_test_2129.c:61)\n==24239== \n==24239== Conditional jump or move depends on uninitialised value(s)\n==24239==    at 0x400834: _main (bs_test_2129.c:39)\n==24239==    by 0x4008B8: main (bs_test_2129.c:61)\n==24239== \n==24239== \n==24239== HEAP SUMMARY:\n==24239==     in use at exit: 1,136 bytes in 2 blocks\n==24239==   total heap usage: 4 allocs, 2 frees, 2,272 bytes allocated\n==24239== \n==24239== LEAK SUMMARY:\n==24239==    definitely lost: 0 bytes in 0 blocks\n==24239==    indirectly lost: 0 bytes in 0 blocks\n==24239==      possibly lost: 0 bytes in 0 blocks\n==24239==    still reachable: 1,136 bytes in 2 blocks\n==24239==         suppressed: 0 bytes in 0 blocks\n==24239== Reachable blocks (those to which a pointer was found) are not shown.\n==24239== To see them, rerun with: --leak-check=full --show-leak-kinds=all\n==24239== \n==24239== For counts of detected and suppressed errors, rerun with: -v\n==24239== Use --track-origins=yes to see where uninitialised values come from\n==24239== ERROR SUMMARY: 80 errors from 2 contexts (suppressed: 4 from 4)\n",
+                "status": 3,
+                "parsed_output": [
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400793: _main (bs_test_2129.c:14)\n    by 0x4008B8: main (bs_test_2129.c:61)\n",
+                        "file": "main.c",
+                        "line": 12
+                    },
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400834: _main (bs_test_2129.c:39)\n    by 0x4008B8: main (bs_test_2129.c:61)\n",
+                        "file": "main.c",
+                        "line": 37
+                    }
+                ]
+            },
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "2130": {
+            "status": 6,
+            "run_result": {
+                "output": "Unesite znakove x i y: Izlazna datoteka prazna!",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": {
+                "output": "==24257== Memcheck, a memory error detector\n==24257== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.\n==24257== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info\n==24257== Command: bs_test_2130\n==24257== Parent PID: 24256\n==24257== \n==24257== Conditional jump or move depends on uninitialised value(s)\n==24257==    at 0x400793: _main (bs_test_2130.c:14)\n==24257==    by 0x4008B8: main (bs_test_2130.c:61)\n==24257== \n==24257== Conditional jump or move depends on uninitialised value(s)\n==24257==    at 0x400834: _main (bs_test_2130.c:39)\n==24257==    by 0x4008B8: main (bs_test_2130.c:61)\n==24257== \n==24257== \n==24257== HEAP SUMMARY:\n==24257==     in use at exit: 1,136 bytes in 2 blocks\n==24257==   total heap usage: 4 allocs, 2 frees, 2,272 bytes allocated\n==24257== \n==24257== LEAK SUMMARY:\n==24257==    definitely lost: 0 bytes in 0 blocks\n==24257==    indirectly lost: 0 bytes in 0 blocks\n==24257==      possibly lost: 0 bytes in 0 blocks\n==24257==    still reachable: 1,136 bytes in 2 blocks\n==24257==         suppressed: 0 bytes in 0 blocks\n==24257== Reachable blocks (those to which a pointer was found) are not shown.\n==24257== To see them, rerun with: --leak-check=full --show-leak-kinds=all\n==24257== \n==24257== For counts of detected and suppressed errors, rerun with: -v\n==24257== Use --track-origins=yes to see where uninitialised values come from\n==24257== ERROR SUMMARY: 79 errors from 2 contexts (suppressed: 4 from 4)\n",
+                "status": 3,
+                "parsed_output": [
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400793: _main (bs_test_2130.c:14)\n    by 0x4008B8: main (bs_test_2130.c:61)\n",
+                        "file": "main.c",
+                        "line": 12
+                    },
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400834: _main (bs_test_2130.c:39)\n    by 0x4008B8: main (bs_test_2130.c:61)\n",
+                        "file": "main.c",
+                        "line": 37
+                    }
+                ]
+            },
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "2131": {
+            "status": 6,
+            "run_result": {
+                "output": "Unesite znakove x i y: Pogresan unosPogresan karakter 2 na mjestu 0\nPogresan karakter 3 na mjestu 1\nPogresan karakter 4 na mjestu 2\nPogresan karakter 5 na mjestu 3\nPogresan karakter 6 na mjestu 4\nPogresan karakter 7 na mjestu 5\nPogresan karakter 8 na mjestu 6\nPogresan karakter 9 na mjestu 7\nPogresan karakter : na mjestu 8\nPogresan karakter ; na mjestu 9\nPogresan karakter < na mjestu 10\nPogresan karakter = na mjestu 11\nPogresan karakter > na mjestu 12\nPogresan karakter ? na mjestu 13\nPogresan karakter @ na mjestu 14\nPogresan karakter A na mjestu 15\nPogresan karakter C na mjestu 17\nPogresan karakter D na mjestu 18\nPogresan karakter E na mjestu 19\nPogresan karakter F na mjestu 20\nPogresan karakter G na mjestu 21\nPogresan karakter H na mjestu 22\nPogresan karakter I na mjestu 23\nPogresan karakter J na mjestu 24\nPogresan karakter K na mjestu 25\nPogresan karakter L na mjestu 26\nPogresan karakter M na mjestu 27\nPogresan karakter N na mjestu 28\nPogresan karakter O na mjestu 29\nPogresan karakter P na mjestu 30\nPogresan karakter Q na mjestu 31\nPogresan karakter R na mjestu 32\nPogresan karakter S na mjestu 33\nPogresan karakter T na mjestu 34\nPogresan karakter U na mjestu 35\nPogresan karakter V na mjestu 36\nPogresan karakter W na mjestu 37\nPogresan karakter X na mjestu 38\nPogresan karakter Y na mjestu 39\nPogresan karakter Z na mjestu 40\nPogresan karakter [ na mjestu 41\nPogresan karakter \\ na mjestu 42\nPogresan karakter ] na mjestu 43\nPogresan karakter ^ na mjestu 44\nPogresan karakter _ na mjestu 45\nPogresan karakter ` na mjestu 46\nPogresan karakter a na mjestu 47\nPogresan karakter b na mjestu 48\nPogresan karakter c na mjestu 49\nSlovo B se ponavlja 50 puta",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        }
+    },
+    "queue_items": 0,
+    "time": 1566827332
+}

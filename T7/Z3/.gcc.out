@@ -1,0 +1,7 @@
+/rhome/b/bkarovic1/workspace/UUP/T7/Z3/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/T7/Z3/main.c:37:10: warning: statement with no effect [-Wunused-value]
+   else (a==1){
+        ~~^~~~
+/rhome/b/bkarovic1/workspace/UUP/T7/Z3/main.c:37:14: error: expected ‘;’ before ‘{’ token
+   else (a==1){
+              ^

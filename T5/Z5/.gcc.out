@@ -1,0 +1,4 @@
+/rhome/b/bkarovic1/workspace/UUP/T5/Z5/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/T5/Z5/main.c:37:15: warning: ISO C forbids empty initializer braces [-Wpedantic]
+  int niz[101]={ }, i, a;
+               ^

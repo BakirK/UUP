@@ -1,0 +1,61 @@
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:15:8: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+   if(x1==x2 ^ y1==y2){
+        ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:15:17: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+   if(x1==x2 ^ y1==y2){
+                 ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:15:8: warning: suggest parentheses around comparison in operand of ‘^’ [-Wparentheses]
+   if(x1==x2 ^ y1==y2){
+      ~~^~~~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:28:8: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+   if(k1==0){
+        ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:133:17: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+    if(((float)x1==0 || x1==duzina) && (y1==0 || (y1==sirina))){
+                 ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:133:26: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+    if(((float)x1==0 || x1==duzina) && (y1==0 || (y1==sirina))){
+                          ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:133:42: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+    if(((float)x1==0 || x1==duzina) && (y1==0 || (y1==sirina))){
+                                          ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:133:52: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+    if(((float)x1==0 || x1==duzina) && (y1==0 || (y1==sirina))){
+                                                    ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:143:9: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+    if(k1==k_pocetno) &&
+         ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:144:4: error: expected identifier before ‘(’ token
+    ((float)n1==n_pocetno){
+    ^
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:152:29: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+     if(y<0 || y>sirina || (y==y1 && x==x1)){
+                             ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:152:38: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+     if(y<0 || y>sirina || (y==y1 && x==x1)){
+                                      ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:155:30: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+      if(y<0 || y>sirina || (y==y1 && x==x1)){
+                              ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:155:39: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+      if(y<0 || y>sirina || (y==y1 && x==x1)){
+                                       ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:158:32: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+       if(x<0 || x> duzina || (y==y1 && x==x1)){
+                                ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:158:41: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+       if(x<0 || x> duzina || (y==y1 && x==x1)){
+                                         ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:161:35: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+        if(x>=0 && x<= duzina && (y!=y1 && x!=x1)){
+                                   ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:161:44: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+        if(x>=0 && x<= duzina && (y!=y1 && x!=x1)){
+                                            ^~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:8:10: warning: unused variable ‘mala_vrijednost’ [-Wunused-variable]
+   double mala_vrijednost=0.000001;
+          ^~~~~~~~~~~~~~~
+/rhome/b/bkarovic1/workspace/UUP/Z1/Z4/main.c:7:45: warning: variable ‘n_pocetno’ set but not used [-Wunused-but-set-variable]
+   double x1, y1, x2, y2, k1, k_pocetno, n1, n_pocetno, x, y;
+                                             ^~~~~~~~~

@@ -1,0 +1,5 @@
+/rhome/b/bkarovic1/workspace/UUP/T11/Z4/main.c: In function ‘proteklo’:
+/rhome/b/bkarovic1/workspace/UUP/T11/Z4/main.c:18:18: error: implicit declaration of function ‘abs’ [-Werror=implicit-function-declaration]
+         proteklo=abs(proteklo);
+                  ^~~
+cc1: some warnings being treated as errors

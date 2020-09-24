@@ -1,0 +1,4 @@
+/rhome/b/bkarovic1/workspace/UUP/Z4/Z3/main.c: In function ‘dvostruko’:
+/rhome/b/bkarovic1/workspace/UUP/Z4/Z3/main.c:59:9: error: lvalue required as left operand of assignment
+     ++*s=ostatak1+'0';
+         ^

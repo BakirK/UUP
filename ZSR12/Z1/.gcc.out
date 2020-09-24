@@ -1,0 +1,4 @@
+/rhome/b/bkarovic1/workspace/UUP/ZSR12/Z1/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/ZSR12/Z1/main.c:33:6: warning: unused variable ‘brojac’ [-Wunused-variable]
+  int brojac = 0;
+      ^~~~~~

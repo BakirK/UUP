@@ -1,0 +1,13 @@
+/rhome/b/bkarovic1/workspace/UUP/T6/Z4/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/T6/Z4/main.c:24:7: error: redeclaration of ‘a’ with no linkage
+   int a=0;
+       ^
+/rhome/b/bkarovic1/workspace/UUP/T6/Z4/main.c:4:18: note: previous declaration of ‘a’ was here
+  int i=0,niz[10],a,n,duzina,j;
+                  ^
+/rhome/b/bkarovic1/workspace/UUP/T6/Z4/main.c:24:7: warning: unused variable ‘a’ [-Wunused-variable]
+   int a=0;
+       ^
+/rhome/b/bkarovic1/workspace/UUP/T6/Z4/main.c:4:29: warning: unused variable ‘j’ [-Wunused-variable]
+  int i=0,niz[10],a,n,duzina,j;
+                             ^

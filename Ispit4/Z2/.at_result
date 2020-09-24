@@ -1,0 +1,181 @@
+{
+    "buildhost_description": {
+        "id": "lab002c03",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "gcc (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 4,
+    "compile_result": {
+        "status": 1,
+        "output": "main.c: In function ‘udvostruci_rijec’:\nmain.c:32:18: warning: ‘p2’ may be used uninitialized in this function [-Wmaybe-uninitialized]\n   while(jeRazmak(*p2)==0 && *p2!='\\0') {\n                  ^~~\nmain.c:38:9: warning: ‘p1’ may be used uninitialized in this function [-Wmaybe-uninitialized]\n   while(*p1!='\\0') {\n         ^~~",
+        "parsed_output": [
+            {
+                "type": "warning",
+                "file": "main.c",
+                "line": "32",
+                "col": "18",
+                "message": "'p2' may be used uninitialized in this function",
+                "output": "/tmp/buildservice/bs_8462/main.c:32:18: warning: ‘p2’ may be used uninitialized in this function [-Wmaybe-uninitialized]   while(jeRazmak(*p2)==0 && *p2!='\\0') {                  ^~~",
+                "code": "while(jeRazmak(*p2)==0 && *p2!='\\0') {"
+            },
+            {
+                "type": "warning",
+                "file": "main.c",
+                "line": "38",
+                "col": "9",
+                "message": "'p1' may be used uninitialized in this function",
+                "output": "/tmp/buildservice/bs_8462/main.c:38:9: warning: ‘p1’ may be used uninitialized in this function [-Wmaybe-uninitialized]   while(*p1!='\\0') {         ^~~",
+                "code": "while(*p1!='\\0') {"
+            }
+        ]
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": {
+        "3069": {
+            "status": 1,
+            "run_result": {
+                "output": "Danas Danas je je dobar dobar dan dan",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3070": {
+            "status": 1,
+            "run_result": {
+                "output": "Ima Ima\nrazmaka razmaka\tvise vise  nego nego \t\njedan jedan",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3071": {
+            "status": 1,
+            "run_result": {
+                "output": "D D4n n4s s j j3 dobar dobar d d4n n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3072": {
+            "status": 1,
+            "run_result": {
+                "output": "543 ,.8271075\n\t5 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3073": {
+            "status": 1,
+            "run_result": {
+                "output": "Ima- Ima- svega svega.Pomalo Pomalo,i i\nzareza zareza\ti i4znakova+ znakova+",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3074": {
+            "status": 1,
+            "run_result": {
+                "output": "SamoJednaRijec SamoJednaRijec",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3075": {
+            "status": 1,
+            "run_result": {
+                "output": " Standardna Standardna greska greska ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3076": {
+            "status": 1,
+            "run_result": {
+                "output": " \n\tA A \t\n ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3077": {
+            "status": 1,
+            "run_result": {
+                "output": "Kilometaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar Kilometaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar i i jos jos",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3078": {
+            "status": 1,
+            "run_result": {
+                "output": "! !4A A7+++ +++3--- ---",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        }
+    },
+    "queue_items": 0,
+    "time": 1551260200
+}

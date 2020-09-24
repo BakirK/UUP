@@ -1,0 +1,14 @@
+/rhome/b/bkarovic1/workspace/UUP/T7/Z2/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/T7/Z2/main.c:14:8: error: conflicting types for ‘a’
+  float a;
+        ^
+/rhome/b/bkarovic1/workspace/UUP/T7/Z2/main.c:13:15: note: previous declaration of ‘a’ was here
+  int n, i, x, a;
+               ^
+/rhome/b/bkarovic1/workspace/UUP/T7/Z2/main.c:20:36: warning: format ‘%f’ expects argument of type ‘double’, but argument 3 has type ‘int’ [-Wformat=]
+  printf("Suma od 1 do %d za x = %.3f je %.3f",n,x,a);
+                                 ~~~^
+                                 %.3d
+/rhome/b/bkarovic1/workspace/UUP/T7/Z2/main.c:13:9: warning: unused variable ‘i’ [-Wunused-variable]
+  int n, i, x, a;
+         ^

@@ -1,0 +1,97 @@
+{
+    "buildhost_description": {
+        "id": "lab002c01",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "gcc (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 4,
+    "compile_result": {
+        "status": 1,
+        "output": "main.c: In function ‘obrnut’:\nmain.c:6:6: warning: variable ‘digit’ set but not used [-Wunused-but-set-variable]\n  int digit,brojac=0,i;\n      ^~~~~\nmain.c: In function ‘main’:\nmain.c:24:11: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]\n  int broj,a;\n           ^",
+        "parsed_output": [
+            {
+                "type": "warning",
+                "file": "main.c",
+                "line": "6",
+                "col": "6",
+                "message": "variable 'digit' set but not used",
+                "output": "/tmp/buildservice/bs_2554/main.c:6:6: warning: variable ‘digit’ set but not used [-Wunused-but-set-variable]  int digit,brojac=0,i;      ^~~~~",
+                "code": "int digit,brojac=0,i;"
+            },
+            {
+                "type": "warning",
+                "file": "main.c",
+                "line": "24",
+                "col": "11",
+                "message": "variable 'a' set but not used",
+                "output": "/tmp/buildservice/bs_2554/main.c:24:11: warning: variable ‘a’ set but not used [-Wunused-but-set-variable]  int broj,a;           ^",
+                "code": "int broj,a;"
+            }
+        ]
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": {
+        "732": {
+            "status": 1,
+            "run_result": {
+                "output": "Broj je: 54321!!",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "733": {
+            "status": 1,
+            "run_result": {
+                "output": "\n4040501",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "734": {
+            "status": 1,
+            "run_result": {
+                "output": "\n89\n999\n1111",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "735": {
+            "status": 1,
+            "run_result": {
+                "output": "Broj je: 54321!!",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        }
+    },
+    "queue_items": 1,
+    "time": 1543598028
+}

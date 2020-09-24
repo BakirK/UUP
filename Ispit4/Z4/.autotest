@@ -1,0 +1,185 @@
+{
+    "id": 5591,
+    "name": "Osnove ra\u010dunarstva (2018\/2019), Ispit 4, zadatak 4",
+    "language": "C",
+    "preferred_compiler": "gcc",
+    "required_compiler": "gcc",
+    "compiler_features": [],
+    "compiler_options": "-O1 -Wall -Wuninitialized -Winit-self -Wno-unused-result -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-ggdb -lm -pass-exit-codes",
+    "profile": "true",
+    "debug": "true",
+    "test": "true",
+    "compile": "true",
+    "run": "false",
+    "test_specifications": [
+        {
+            "id": 1,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/\/ AT1: Provjera otvaranja txt datoteke\nremove(\"mjerenja.txt\");\n_main();\n\/\/ Program koji uvijek ispisuje ovu poruku ce dobiti 0 bodova",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Nije uspjelo otvaranje datoteke mjerenja.txt"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/\/ AT2: Provjera otvaranja binarne datoteke\nFILE* txt = fopen(\"mjerenja.txt\", \"w\");\n\/\/ Ovo ce kreirati prazan fajl\nfclose(txt);\n\nremove(\"zadane.dat\");\n_main();\n\/\/ Program koji uvijek ispisuje ovu poruku ce dobiti 0 bodova",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Nije uspjelo otvaranje datoteke zadane.dat"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/\/ AT3: Rad sa praznim datotekama\nFILE* txt = fopen(\"mjerenja.txt\", \"w\");\n\/\/ Ovo ce kreirati prazan fajl\nfclose(txt);\n\nFILE* bin = fopen(\"zadane.dat\", \"wb\");\n\/\/ Ovo ce kreirati prazan binarni fajl\nfclose(bin);\n_main();\n\n\/\/ Ocekujemo praznu izlaznu datoteku\nprintf(\"IZLAZ: \");\nFILE* out = fopen(\"provjera.txt\", \"r\");\nint c;\nwhile((c = fgetc(out)) != EOF) printf(\"%c\", c);\nfclose(out);\n\/\/ Program koji uvijek kreira praznu izlaznu datoteku ce dobiti 0 bodova",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "IZLAZ: "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 4,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/\/ AT4: Trivijalni test\nFILE* txt = fopen(\"mjerenja.txt\", \"w\");\nfputs(\"1.0,2.0,3.0,4.0,5.0\", txt);\nfclose(txt);\n\nFILE* bin = fopen(\"zadane.dat\", \"wb\");\ndouble niz[] = {1,2,3,4,5};\nfwrite(niz, sizeof(double), 5, bin);\nfclose(bin);\n_main();\n\nprintf(\"IZLAZ:\\n\");\nFILE* out = fopen(\"provjera.txt\", \"r\");\nint c;\nwhile((c = fgetc(out)) != EOF) printf(\"%c\", c);\nfclose(out);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "IZLAZ:\\n9:00:00 1.00\\n9:00:15 2.00\\n9:00:30 3.00\\n9:00:45 4.00\\n9:01:00 5.00"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 5,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/\/ AT5: Kreiramo veliki niz da vidimo kako se smjenjuju sati, minute i sekunde\n\/\/ te da li se program krahira kada ima previ\u0161e podataka\nint i;\nFILE* txt = fopen(\"mjerenja.txt\", \"w\");\nfor (i=0; i<11000; i++)\n   fprintf(txt, \"%f,\", (float)i);\nfprintf(txt, \"0.1\");\nfclose(txt);\n\nFILE* bin = fopen(\"zadane.dat\", \"wb\");\ndouble niz[11001];\nfor (i=0; i<11000; i++) niz[i]=i;\nniz[11000] = 0.1;\nfwrite(niz, sizeof(double), 11001, bin);\nfclose(bin);\n_main();\n\nFILE* out = fopen(\"provjera.txt\", \"r\");\nchar linija[1000];\nfor (i=0; i<11001; i++) {\n   fgets(linija, 1000, out);\n   \/\/ Necemo sve ispisati jer bi bilo previse, nego samo svaku 983-cu liniju\n   if (i%983 == 15) printf(\"%s\", linija);\n}\nfclose(out);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "9:03:45 15.00\\n13:09:30 998.00\\n17:15:15 1981.00\\n21:21:00 2964.00\\n25:26:45 3947.00\\n29:32:30 4930.00\\n33:38:15 5913.00\\n37:44:00 6896.00\\n41:49:45 7879.00\\n45:55:30 8862.00\\n50:01:15 9845.00\\n50:39:45 9999.00"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 6,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/\/ AT6: Rad sa neta\u010dnim podacima - treba ispisati svakih 10 minuta\nint i;\nFILE* txt = fopen(\"mjerenja.txt\", \"w\");\n\/\/ Prvi broj ce biti netacan, drugi i treci tacan\n\/\/ Ujedno provjeravamo zaokruzivanje na dvije decimale\nfputs(\"100,12.453,3,\",txt);\n\/\/ Ostali su netacni\nfor (i=3; i<1000; i++)\n   fprintf(txt, \"%f,\", (float)0);\nfprintf(txt, \"0.1\");\nfclose(txt);\n\nFILE* bin = fopen(\"zadane.dat\", \"wb\");\ndouble niz[1001];\nniz[0] = 1; niz[1]=12.453; niz[2]=3;\nfor (i=3; i<1000; i++) niz[i]=1;\nniz[1000] = 1;\nfwrite(niz, sizeof(double), 1001, bin);\nfclose(bin);\n_main();\n\nFILE* out = fopen(\"provjera.txt\", \"r\");\nchar linija[1000];\nfor (i=0; i<5; i++) {\n   fgets(linija, 1000, out);\n   printf(\"%s\", linija);\n}\nfclose(out);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "9:00:15 12.45\\n9:00:30 3.00\\n9:10:30 0.00\\n9:20:30 0.00\\n9:30:30 0.00"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 7,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/\/ AT7: Provjera izracunavanja 5%\nint i;\nFILE* txt = fopen(\"mjerenja.txt\", \"w\");\nfor (i=10; i>0; i--)\n   fprintf(txt, \"%f,\", (float)i+0.2);\nfprintf(txt, \"0.1\");\nfclose(txt);\n\nFILE* bin = fopen(\"zadane.dat\", \"wb\");\ndouble niz[11];\nfor (i=0; i<10; i++) niz[i]=10 - i;\nniz[10] = 1;\nfwrite(niz, sizeof(double), 11, bin);\nfclose(bin);\n\n_main();\n\nFILE* out = fopen(\"provjera.txt\", \"r\");\nchar linija[1000];\nfor (i=0; i<11; i++) {\n   fgets(linija, 1000, out);\n   if (feof(out)) break;\n   \/\/ Broj 5 se razlikuje za ta\u010dno 5% \u0161to treba ispisati, a dalje ne\n   printf(\"%s\", linija);\n}\nfclose(out);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "9:00:00 10.20\\n9:00:15 9.20\\n9:00:30 8.20\\n9:00:45 7.20\\n9:01:00 6.20\\n9:01:15 5.20\\n9:01:30 4.20"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 8,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/\/ AT8: Provjera epsilona\nint i;\nFILE* txt = fopen(\"mjerenja.txt\", \"w\");\nfor (i=0; i<1000; i++)\n   fprintf(txt, \"%f,\", 9.5);\nfprintf(txt, \"0.1\");\nfclose(txt);\n\nFILE* bin = fopen(\"zadane.dat\", \"wb\");\ndouble niz[1001];\nfor (i=0; i<1000; i++) niz[i]=10 + i * 0.00002;\nniz[1000] = 1;\nfwrite(niz, sizeof(double), 1001, bin);\nfclose(bin);\n\n_main();\n\nFILE* out = fopen(\"provjera.txt\", \"r\");\nchar linija[1000];\nfor (i=0; i<10; i++) {\n   fgets(linija, 1000, out);\n   if (feof(out)) break;\n   printf(\"%s\", linija);\n}\nfclose(out);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "9:00:00 9.50\\n9:00:15 9.50\\n9:00:30 9.50\\n9:00:45 9.50\\n9:01:00 9.50\\n9:01:15 9.50\\n9:11:15 9.50\\n9:21:15 9.50\\n9:31:15 9.50\\n9:41:15 9.50\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

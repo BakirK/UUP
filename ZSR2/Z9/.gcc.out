@@ -1,0 +1,5 @@
+/rhome/b/bkarovic1/workspace/UUP/ZSR2/Z9/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/ZSR2/Z9/main.c:4:6: error: size of array ‘niz’ is negative
+  int niz[-1];
+      ^~~
+/rhome/b/bkarovic1/workspace/UUP/ZSR2/Z9/main.c:4:6: warning: unused variable ‘niz’ [-Wunused-variable]

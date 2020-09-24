@@ -1,0 +1,8 @@
+/rhome/b/bkarovic1/workspace/UUP/Z2/Z1/main.c: In function ‘spirala’:
+/rhome/b/bkarovic1/workspace/UUP/Z2/Z1/main.c:26:50: error: expected ‘)’ before ‘j’
+                 if ((j < i - 1 || j >= size - i) j%2==0 && ) {
+                                                  ^
+/rhome/b/bkarovic1/workspace/UUP/Z2/Z1/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/Z2/Z1/main.c:67:11: warning: unused variable ‘i’ [-Wunused-variable]
+     int n,i=0;
+           ^

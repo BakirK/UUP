@@ -1,0 +1,4 @@
+/rhome/b/bkarovic1/workspace/UUP/T7/Z5/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/T7/Z5/main.c:36:29: warning: unknown conversion type character ‘)’ in format [-Wformat=]
+  printf("Razlika %.6f (%.2f%)",razlika,p);
+                             ^

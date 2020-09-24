@@ -1,0 +1,7 @@
+/rhome/b/bkarovic1/workspace/UUP/T8/Z3/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/T8/Z3/main.c:31:7: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+   if(a!=-1){
+       ^~
+/rhome/b/bkarovic1/workspace/UUP/T8/Z3/main.c:37:9: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+  while(a!=-1);
+         ^~

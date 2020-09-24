@@ -1,0 +1,4 @@
+/rhome/b/bkarovic1/workspace/UUP/T12/Z3/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/T12/Z3/main.c:53:34: warning: spurious trailing ‘%’ in format [-Wformat=]
+         printf("\nProlaznost:%.0f%",prolaznost);
+                                  ^

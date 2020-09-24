@@ -1,0 +1,269 @@
+{
+    "id": 234418,
+    "name": "Osnove ra\u010dunarstva (2016\/2017), Ispit 5, Zadatak 1",
+    "language": "C",
+    "required_compiler": "gcc",
+    "preferred_compiler": "gcc",
+    "compiler_features": [
+
+    ],
+    "compiler_options": "-O1 -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-ggdb -lm -pass-exit-codes",
+    "compile": "true",
+    "run": "false",
+    "test": "true",
+    "debug": "true",
+    "profile": "true",
+    "test_specifications": [
+        {
+            "id": 3037,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT1: obicni primjer *\/\n    int niz1[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 92, 93, 94, 95, 96};\n    int niz2[20];\n    int n1 = sizeof niz1 \/ sizeof *niz1, n2 = sizeof niz2 \/ sizeof *niz2;\n    int vel = proste_sume(niz1, n1, niz2, n2), i;\n    for (i = 0; i < vel; ++i)\n        printf (\"%d \", niz2[i]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 3 5 7 92 94 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3038,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT2: negativni brojevi (suma CIFRI je i dalje pozitivna!) *\/\n    int niz1[] = {-1, 0, -2, -21, -12, 12, 6, 4, -3l};\n    int niz2[20];\n    int n1 = sizeof niz1 \/ sizeof *niz1, n2 = sizeof niz2 \/ sizeof *niz2;\n    int vel = proste_sume(niz1, n1, niz2, n2), i;\n    for (i = 0; i < vel; ++i)\n        printf (\"%d \", niz2[i]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "-2 -21 -12 12 -3 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3039,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT3: niz2 ima knap mjesta da smjesti sve brojeve\n       a kao kapacitet niza je namjerno proslijedjen veci broj!\n    *\/\n    int niz1[] = {331, 201, 301, 210, 20100, 401, 3021};\n    int niz2[5];\n    int n1 = sizeof niz1 \/ sizeof *niz1, n2 = sizeof niz2 \/ sizeof *niz2;\n    int vel = proste_sume(niz1, n1, niz2, n2 + 5), i;\n    for (i = 0; i < vel; ++i)\n        printf (\"%d \", niz2[i]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "331 201 210 20100 401 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3044,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT4: niz2 ima MANJE mjesta nego sto ima prostih\n       sumi cifri u niz1 !\n    *\/\n    int niz1[] = {20, 2, 331, 7, 201, 301, 210, 20100, 401, 3021};\n    int niz2[4];\n    int n1 = sizeof niz1 \/ sizeof *niz1, n2 = sizeof niz2 \/ sizeof *niz2;\n    int vel = proste_sume(niz1, n1, niz2, n2), i;\n    for (i = 0; i < vel; ++i)\n        printf (\"%d \", niz2[i]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "20 2 331 7 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3045,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT5: niz1 je prazan (n1 = 0)!\n    *\/\n    int niz1[2] = {1, 2};\n    int niz2[4];\n    int vel = proste_sume(niz1, 0, niz2, 4);\n    printf (\"Vel: %d\\n\", vel);\n    vel = proste_sume(niz1, 2, niz2, 4);\n    printf (\"Vel: %d, niz2[0] = %d\", vel, *niz2);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Vel: 0\\nVel: 1, niz2[0] = 2"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3046,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT6: u niz1 NEMA brojeva sa prostim sumama cifri! *\/\n    int niz1[] = {1, 20101, 4, 44, 40, 51, 62, 620, 611, 6111};\n    int niz2[2];\n    int n1 = sizeof niz1 \/ sizeof *niz1, n2 = sizeof niz2 \/ sizeof *niz2;\n    int vel = proste_sume(niz1, n1, niz2, n2);\n    printf (\"Vel: %d\\n\", vel, *niz2);\n    \/* Sad ipak IMA prostih suma cifri, dvije *\/\n    niz1[0] = 2; niz1[4] = 501010;\n    vel = proste_sume(niz1, n1, niz2, n2);\n    printf (\"Vel: %d, niz2[0] = %d, niz2[1] = %d\", vel, niz2[0], niz2[1]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Vel: 0\\nVel: 2, niz2[0] = 2, niz2[1] = 501010"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3047,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT7: niz1 NE SMIJE biti modificiran *\/\n    int niz1[] = {10, 11, 12, 13, 14, 15, 16, 17};\n    int niz2[4];\n    int n1 = sizeof niz1 \/ sizeof *niz1, n2 = sizeof niz2 \/ sizeof *niz2;\n    int vel = proste_sume(niz1, n1, niz2, n2), i;\n    printf (\"niz1: \");\n    for (i = 0; i < n1; ++i)\n        printf (\"%d \", niz1[i]);\n    printf (\"\\nniz2: \");\n    for (i = 0; i < vel; ++i)\n        printf (\"%d \", niz2[i]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "niz1: 10 11 12 13 14 15 16 17\\nniz2: 11 12 14 16"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3048,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "    \/* AT8: niz2 je kopija od niz1 & veliki brojevi *\/\n    int niz1[] = {999031, -999031, -130999, 50505011, -1055501};\n    int niz2[5];\n    int n1 = sizeof niz1 \/ sizeof *niz1, n2 = sizeof niz2 \/ sizeof *niz2;\n    int vel = proste_sume(niz1, n1, niz2, n2), i;\n    for (i = 0; i < vel; ++i)\n        printf (\"%d \", niz2[i]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "999031 -999031 -130999 50505011 -1055501"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3055,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/* AT9: Stress test *\/\nint niz1[10000], niz2[10000];\nint i;\nfor (i=0; i<10000; i++)\n    niz1[i] = i;\nint vel = proste_sume(niz1, 10000, niz2, 10000);\nprintf(\"Broj clanova: %d\\n\", vel);\nfor (i=0; i<6; i++)\n    printf(\"%d \", niz2[i]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Broj clanova: 3010\\n2 3 5 7 11 12 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3056,
+            "require_symbols": [
+
+            ],
+            "replace_symbols": [
+
+            ],
+            "code": "\/* AT10: Stress test 2 *\/\nint niz1[10000], niz2[10000];\nint i;\nfor (i=0; i<10000; i++)\n    niz1[i] = i + 999031;\nint vel = proste_sume(niz1, 10000, niz2, 10000);\nprintf(\"Broj clanova: %d\\n\", vel);\nfor (i=0; i<6; i++)\n    printf(\"%d \", niz2[i]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Broj clanova: 2941\\n999031 999037 999040 999046 999055 999059 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

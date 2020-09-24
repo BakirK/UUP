@@ -1,0 +1,145 @@
+{
+    "buildhost_description": {
+        "id": "lab002c28",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "gcc (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 4,
+    "compile_result": {
+        "status": 1,
+        "output": ""
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": {
+        "1": {
+            "status": 6,
+            "run_result": {
+                "output": "Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: 1. Bakir Karovic - 15, 16\n2. Faris Bazdar - 15, 16\n3. Pujdo Pujdic - 8, 9\n4. Muho Muhic - 18, 14\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Izlazna datoteka usmeni.txt je kreirana\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: 1. Bakir Karovic - 15, 16\n2. Faris Bazdar - 15, 16\n3. Pujdo Pujdic - 8, 9\n4. Muho Muhic - 18, 14\n5. Mirza Merzic - 20, 20\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Izlazna datoteka usmeni.txt je kreirana\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: 1. Bakir Karovic - 15, 16\n2. Faris Bazdar - 15, 16\n3. Pujdo Pujdic - 8, 9\n4. Muho Muhic - 18, 14\n5. Mirza Merzic - 20, 20\n6. Niko FaZe - 0, 0\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Izlazna datoteka usmeni.txt je kreirana\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": {
+                "output": "==20900== Memcheck, a memory error detector\n==20900== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.\n==20900== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info\n==20900== Command: bs_test_1\n==20900== Parent PID: 20899\n==20900== \n==20900== Syscall param write(buf) points to uninitialised byte(s)\n==20900==    at 0x3B4BCDB850: __write_nocancel (in /lib64/libc-2.12.so)\n==20900==    by 0x3B4BC719B2: _IO_file_write@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20900==    by 0x3B4BC72F64: _IO_do_write@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20900==    by 0x3B4BC7273F: _IO_file_close_it@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20900==    by 0x3B4BC663D7: fclose@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20900==    by 0x4009A8: _main (bs_test_1.c:56)\n==20900==    by 0x400E26: main (bs_test_1.c:120)\n==20900==  Address 0x4c13006 is in a rw- anonymous segment\n==20900== \n==20900== Conditional jump or move depends on uninitialised value(s)\n==20900==    at 0x400BED: _main (bs_test_1.c:95)\n==20900==    by 0x400E26: main (bs_test_1.c:120)\n==20900== \n==20900== Conditional jump or move depends on uninitialised value(s)\n==20900==    at 0x400D7D: _main (bs_test_1.c:104)\n==20900==    by 0x400E26: main (bs_test_1.c:120)\n==20900== \n==20900== \n==20900== HEAP SUMMARY:\n==20900==     in use at exit: 0 bytes in 0 blocks\n==20900==   total heap usage: 12 allocs, 12 frees, 6,816 bytes allocated\n==20900== \n==20900== All heap blocks were freed -- no leaks are possible\n==20900== \n==20900== For counts of detected and suppressed errors, rerun with: -v\n==20900== Use --track-origins=yes to see where uninitialised values come from\n==20900== ERROR SUMMARY: 199 errors from 3 contexts (suppressed: 4 from 4)\n",
+                "status": 3,
+                "parsed_output": [
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400BED: _main (bs_test_1.c:95)\n    by 0x400E26: main (bs_test_1.c:120)\n",
+                        "file": "main.c",
+                        "line": 93
+                    },
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400D7D: _main (bs_test_1.c:104)\n    by 0x400E26: main (bs_test_1.c:120)\n",
+                        "file": "main.c",
+                        "line": 102
+                    }
+                ]
+            },
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "2": {
+            "status": 6,
+            "run_result": {
+                "output": "Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: 1. Bakir Karovic - 15, 16\n2. Faris Bazdar - 15, 16\n3. Pujdo Pujdic - 8, 9\n4. Muho Muhic - 18, 14\n5. Mirza Merzic - 20, 20\n6. Niko FaZe - 0, 0\n7. Muho Muhic - 18, 14\n8. Mirza Merzic - 20, 20\n9. Niko FaZe - 0, 0\n10. Muho Muhic - 18, 14\n11. Mirza Merzic - 20, 20\n12. Niko FaZe - 0, 0\n13. Muho Muhic - 18, 14\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Izlazna datoteka usmeni.txt je kreirana\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: 1. Bakir Karovic - 15, 16\n2. Faris Bazdar - 15, 16\n3. Pujdo Pujdic - 8, 9\n4. Muho Muhic - 18, 14\n5. Mirza Merzic - 20, 20\n6. Niko FaZe - 0, 0\n7. Muho Muhic - 18, 14\n8. Mirza Merzic - 20, 20\n9. Niko FaZe - 0, 0\n10. Muho Muhic - 18, 14\n11. Mirza Merzic - 20, 20\n12. Niko FaZe - 0, 0\n13. Muho Muhic - 18, 14\n14. Mirza Merzic - 20, 20\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Izlazna datoteka usmeni.txt je kreirana\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: 1. Bakir Karovic - 15, 16\n2. Faris Bazdar - 15, 16\n3. Pujdo Pujdic - 8, 9\n4. Muho Muhic - 18, 14\n5. Mirza Merzic - 20, 20\n6. Niko FaZe - 0, 0\n7. Muho Muhic - 18, 14\n8. Mirza Merzic - 20, 20\n9. Niko FaZe - 0, 0\n10. Muho Muhic - 18, 14\n11. Mirza Merzic - 20, 20\n12. Niko FaZe - 0, 0\n13. Muho Muhic - 18, 14\n14. Mirza Merzic - 20, 20\n15. Niko FaZe - 0, 0\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Izlazna datoteka usmeni.txt je kreirana\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Ocekivani broj studenata: 2, ucitano: 0!\n\nUcitani studenti iz datoteke usmeni.dat:\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": {
+                "output": "==20918== Memcheck, a memory error detector\n==20918== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.\n==20918== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info\n==20918== Command: bs_test_2\n==20918== Parent PID: 20917\n==20918== \n==20918== Syscall param write(buf) points to uninitialised byte(s)\n==20918==    at 0x3B4BCDB850: __write_nocancel (in /lib64/libc-2.12.so)\n==20918==    by 0x3B4BC719B2: _IO_file_write@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20918==    by 0x3B4BC72F64: _IO_do_write@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20918==    by 0x3B4BC7273F: _IO_file_close_it@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20918==    by 0x3B4BC663D7: fclose@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20918==    by 0x4009A8: _main (bs_test_2.c:56)\n==20918==    by 0x400F64: main (bs_test_2.c:144)\n==20918==  Address 0x4c13006 is in a rw- anonymous segment\n==20918== \n==20918== Conditional jump or move depends on uninitialised value(s)\n==20918==    at 0x400BED: _main (bs_test_2.c:95)\n==20918==    by 0x400F64: main (bs_test_2.c:144)\n==20918== \n==20918== Conditional jump or move depends on uninitialised value(s)\n==20918==    at 0x400D7D: _main (bs_test_2.c:104)\n==20918==    by 0x400F64: main (bs_test_2.c:144)\n==20918== \n==20918== \n==20918== HEAP SUMMARY:\n==20918==     in use at exit: 0 bytes in 0 blocks\n==20918==   total heap usage: 13 allocs, 13 frees, 7,384 bytes allocated\n==20918== \n==20918== All heap blocks were freed -- no leaks are possible\n==20918== \n==20918== For counts of detected and suppressed errors, rerun with: -v\n==20918== Use --track-origins=yes to see where uninitialised values come from\n==20918== ERROR SUMMARY: 631 errors from 3 contexts (suppressed: 4 from 4)\n",
+                "status": 3,
+                "parsed_output": [
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400BED: _main (bs_test_2.c:95)\n    by 0x400F64: main (bs_test_2.c:144)\n",
+                        "file": "main.c",
+                        "line": 93
+                    },
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400D7D: _main (bs_test_2.c:104)\n    by 0x400F64: main (bs_test_2.c:144)\n",
+                        "file": "main.c",
+                        "line": 102
+                    }
+                ]
+            },
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3": {
+            "status": 6,
+            "run_result": {
+                "output": "Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: 1. Bakir Karovic - 15, 16\n2. Faris Bazdar - 15, 16\n3. Pujdo Pujdic - 8, 9\n4. Muho Muhic - 18, 14\n5. Mirza Merzic - 20, 20\n6. Niko FaZe - 0, 0\n7. Muho Muhic - 18, 14\n8. Mirza Merzic - 20, 20\n9. Niko FaZe - 0, 0\n10. Muho Muhic - 18, 14\n11. Mirza Merzic - 20, 20\n12. Niko FaZe - 0, 0\n13. Muho Muhic - 18, 14\n14. Mirza Merzic - 20, 20\n15. Niko FaZe - 0, 0\n16. Muho Muhic - 18, 14\n17. Mirza Merzic - 20, 20\n18. Niko FaZe - 0, 0\n19. Muho Muhic - 18, 14\n20. Mirza Merzic - 20, 20\n21. Niko FaZe - 0, 0\n22. Niko FaZe - 1, 2\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Izlazna datoteka usmeni.txt je kreirana\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: 1. Bakir Karovic - 15, 16\n2. Faris Bazdar - 15, 16\n3. Pujdo Pujdic - 8, 9\n4. Muho Muhic - 18, 14\n5. Mirza Merzic - 20, 20\n6. Niko FaZe - 0, 0\n7. Muho Muhic - 18, 14\n8. Mirza Merzic - 20, 20\n9. Niko FaZe - 0, 0\n10. Muho Muhic - 18, 14\n11. Mirza Merzic - 20, 20\n12. Niko FaZe - 0, 0\n13. Muho Muhic - 18, 14\n14. Mirza Merzic - 20, 20\n15. Niko FaZe - 0, 0\n16. Muho Muhic - 18, 14\n17. Mirza Merzic - 20, 20\n18. Niko FaZe - 0, 0\n19. Muho Muhic - 18, 14\n20. Mirza Merzic - 20, 20\n21. Niko FaZe - 0, 0\n22. Niko FaZe - 1, 2\n23. Opet_neki Cep - 3, 4\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Izlazna datoteka usmeni.txt je kreirana\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: \nUcitani studenti iz datoteke usmeni.dat:\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": {
+                "output": "==20936== Memcheck, a memory error detector\n==20936== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.\n==20936== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info\n==20936== Command: bs_test_3\n==20936== Parent PID: 20935\n==20936== \n==20936== Syscall param write(buf) points to uninitialised byte(s)\n==20936==    at 0x3B4BCDB850: __write_nocancel (in /lib64/libc-2.12.so)\n==20936==    by 0x3B4BC719B2: _IO_file_write@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20936==    by 0x3B4BC72F64: _IO_do_write@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20936==    by 0x3B4BC7273F: _IO_file_close_it@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20936==    by 0x3B4BC663D7: fclose@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20936==    by 0x4009A8: _main (bs_test_3.c:56)\n==20936==    by 0x400F64: main (bs_test_3.c:144)\n==20936==  Address 0x4c13005 is in a rw- anonymous segment\n==20936== \n==20936== Conditional jump or move depends on uninitialised value(s)\n==20936==    at 0x400BED: _main (bs_test_3.c:95)\n==20936==    by 0x400F64: main (bs_test_3.c:144)\n==20936== \n==20936== Conditional jump or move depends on uninitialised value(s)\n==20936==    at 0x400D7D: _main (bs_test_3.c:104)\n==20936==    by 0x400F64: main (bs_test_3.c:144)\n==20936== \n==20936== \n==20936== HEAP SUMMARY:\n==20936==     in use at exit: 0 bytes in 0 blocks\n==20936==   total heap usage: 9 allocs, 9 frees, 5,112 bytes allocated\n==20936== \n==20936== All heap blocks were freed -- no leaks are possible\n==20936== \n==20936== For counts of detected and suppressed errors, rerun with: -v\n==20936== Use --track-origins=yes to see where uninitialised values come from\n==20936== ERROR SUMMARY: 728 errors from 3 contexts (suppressed: 4 from 4)\n",
+                "status": 3,
+                "parsed_output": [
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400BED: _main (bs_test_3.c:95)\n    by 0x400F64: main (bs_test_3.c:144)\n",
+                        "file": "main.c",
+                        "line": 93
+                    },
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400D7D: _main (bs_test_3.c:104)\n    by 0x400F64: main (bs_test_3.c:144)\n",
+                        "file": "main.c",
+                        "line": 102
+                    }
+                ]
+            },
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "4": {
+            "status": 6,
+            "run_result": {
+                "output": "Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Unesite ime: Unesite prezime: Unesite broj bodova na I parcijalnom: Unesite broj bodova na II parcijalnom: Unesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: 1. Bakir Karovic - 15, 16\n2. Faris Bazdar - 15, 16\n3. Pujdo Pujdic - 8, 9\n4. Muho Muhic - 18, 14\n5. Mirza Merzic - 20, 20\n6. Niko FaZe - 0, 0\n7. Muho Muhic - 18, 14\n8. Mirza Merzic - 20, 20\n9. Niko FaZe - 0, 0\n10. Muho Muhic - 18, 14\n11. Mirza Merzic - 20, 20\n12. Niko FaZe - 0, 0\n13. Muho Muhic - 18, 14\n14. Mirza Merzic - 20, 20\n15. Niko FaZe - 0, 0\n16. Muho Muhic - 18, 14\n17. Mirza Merzic - 20, 20\n18. Niko FaZe - 0, 0\n19. Muho Muhic - 18, 14\n20. Mirza Merzic - 20, 20\n21. Niko FaZe - 0, 0\n22. Niko FaZe - 1, 2\n23. Opet_neki Cep - 3, 4\n24. Niko FaZe - 1, 2\n25. Opet_neki Cep - 3, 4\n26. Niko FaZe - 1, 2\n27. Opet_neki Cep - 3, 4\n28. a s - 11, 10\n29. q w - 13, 20\n30. e r - 20, 20\n31. g h - 1, 20\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Izlazna datoteka usmeni.txt je kreirana\nUnesite 1 za unos, 2 za ispis, 3 za usmeni, 0 za izlaz: Ocekivani broj studenata: 3, ucitano: 0!\n\nUcitani studenti iz datoteke usmeni.dat:\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": {
+                "output": "==20954== Memcheck, a memory error detector\n==20954== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.\n==20954== Using Valgrind-3.12.0 and LibVEX; rerun with -h for copyright info\n==20954== Command: bs_test_4\n==20954== Parent PID: 20953\n==20954== \n==20954== Syscall param write(buf) points to uninitialised byte(s)\n==20954==    at 0x3B4BCDB850: __write_nocancel (in /lib64/libc-2.12.so)\n==20954==    by 0x3B4BC719B2: _IO_file_write@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20954==    by 0x3B4BC72F64: _IO_do_write@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20954==    by 0x3B4BC7273F: _IO_file_close_it@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20954==    by 0x3B4BC663D7: fclose@@GLIBC_2.2.5 (in /lib64/libc-2.12.so)\n==20954==    by 0x4009A8: _main (bs_test_4.c:56)\n==20954==    by 0x400F64: main (bs_test_4.c:144)\n==20954==  Address 0x4c13002 is in a rw- anonymous segment\n==20954== \n==20954== Conditional jump or move depends on uninitialised value(s)\n==20954==    at 0x400BED: _main (bs_test_4.c:95)\n==20954==    by 0x400F64: main (bs_test_4.c:144)\n==20954== \n==20954== Conditional jump or move depends on uninitialised value(s)\n==20954==    at 0x400D7D: _main (bs_test_4.c:104)\n==20954==    by 0x400F64: main (bs_test_4.c:144)\n==20954== \n==20954== \n==20954== HEAP SUMMARY:\n==20954==     in use at exit: 0 bytes in 0 blocks\n==20954==   total heap usage: 8 allocs, 8 frees, 4,544 bytes allocated\n==20954== \n==20954== All heap blocks were freed -- no leaks are possible\n==20954== \n==20954== For counts of detected and suppressed errors, rerun with: -v\n==20954== Use --track-origins=yes to see where uninitialised values come from\n==20954== ERROR SUMMARY: 783 errors from 3 contexts (suppressed: 4 from 4)\n",
+                "status": 3,
+                "parsed_output": [
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400BED: _main (bs_test_4.c:95)\n    by 0x400F64: main (bs_test_4.c:144)\n",
+                        "file": "main.c",
+                        "line": 93
+                    },
+                    {
+                        "type": 3,
+                        "output": " Conditional jump or move depends on uninitialised value(s)\n    at 0x400D7D: _main (bs_test_4.c:104)\n    by 0x400F64: main (bs_test_4.c:144)\n",
+                        "file": "main.c",
+                        "line": 102
+                    }
+                ]
+            },
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        }
+    },
+    "queue_items": 0,
+    "time": 1549316289
+}

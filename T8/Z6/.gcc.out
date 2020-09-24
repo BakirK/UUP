@@ -1,0 +1,7 @@
+/rhome/b/bkarovic1/workspace/UUP/T8/Z6/main.c: In function ‘sortiraj’:
+/rhome/b/bkarovic1/workspace/UUP/T8/Z6/main.c:29:12: warning: unused variable ‘q’ [-Wunused-variable]
+     float* q=niz;
+            ^
+/rhome/b/bkarovic1/workspace/UUP/T8/Z6/main.c:28:12: warning: unused variable ‘p’ [-Wunused-variable]
+     float* p=niz;
+            ^

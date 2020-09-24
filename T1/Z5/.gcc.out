@@ -1,0 +1,7 @@
+/rhome/b/bkarovic1/workspace/UUP/T1/Z5/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/T1/Z5/main.c:18:61: warning: unknown conversion type character ‘\x0a’ in format [-Wformat=]
+  printf("Udio velike tarife u ukupnoj potrosnji je: %3.1f % \n",udio_VT);
+                                                             ^~
+/rhome/b/bkarovic1/workspace/UUP/T1/Z5/main.c:19:59: warning: unknown conversion type character ‘\x0a’ in format [-Wformat=]
+  printf("Udio male tarife u ukupnoj potrosnji je: %3.1f % \n",udio_MT);
+                                                           ^~

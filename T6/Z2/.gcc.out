@@ -1,0 +1,4 @@
+/rhome/b/bkarovic1/workspace/UUP/T6/Z2/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/T6/Z2/main.c:5:13: warning: unused variable ‘min’ [-Wunused-variable]
+     int i,j,min;
+             ^~~

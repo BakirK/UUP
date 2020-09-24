@@ -1,0 +1,185 @@
+{
+    "id": 5584,
+    "name": "Osnove ra\u010dunarstva (2018\/2019), Ispit 3, zadatak 1",
+    "language": "C",
+    "preferred_compiler": "gcc",
+    "required_compiler": "gcc",
+    "compiler_features": [],
+    "compiler_options": "-O1 -Wall -Wuninitialized -Winit-self -Wno-unused-result -Wfloat-equal -Wno-sign-compare -Werror=implicit-function-declaration -Werror=vla -pedantic -lm -pass-exit-codes",
+    "compiler_options_debug": "-ggdb -lm -pass-exit-codes",
+    "profile": "true",
+    "debug": "true",
+    "test": "true",
+    "compile": "true",
+    "run": "false",
+    "test_specifications": [
+        {
+            "id": 1,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT1: Primjer iz zadatka (main) *\/\n_main();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": "8 9 7 169 121 18 11 -1\n7 1 2 818 96 12 16 999 -1"
+            },
+            "expected": [
+                "Unesite niz A: Unesite niz B: 2,96,16.\\n"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 2,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT2: Primjer iz zadatka (funkcija) *\/\nint X[] = {8, 9, 7, 169, 121, 18, 11};\nint Y[] = {7, 1, 2, 818, 96, 12, 16, 999};\nint vel = izbaci_iste_cifre(X, 7, Y, 8);\nint i;\nfor (i=0; i<vel; i++)\n   printf(\"%d \", Y[i]);\n",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "2 96 16 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 3,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT3: Veliki niz B *\/\nint A[] = {4};\nint B[1000];\nint i;\nfor (i=0; i<1000; i++) B[i] = 4;\nB[999] = 42;\nint vel = izbaci_iste_cifre(A, 1, B, 1000);\nprintf(\"Vel: %d\\nB[0] = %d\", vel, B[0]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Vel: 1\\nB[0] = 42"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 4,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT4: Oba niza velika *\/\nint A[110], B[110];\nint i, j;\nfor (i=0; i<110; i++) A[i] = i;\nfor (i=0; i<110; i++) B[i] = i+20;\nint vel = izbaci_iste_cifre(A, 110, B, 110);\nfor (i=0; i<vel; i++)\n   printf(\"%d \", B[i]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "123 124 125 126 127 128 129 "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 5,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT5: Veliki niz A *\/\nint A[1000];\nint B[] = {55, 6};\nint i;\nfor (i=0; i<1000; i++) A[i] = 5;\nint vel = izbaci_iste_cifre(A, 1000, B, 2);\nprintf(\"Vel: %d\\nB[0] = %d\", vel, B[0]);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "Vel: 1\\nB[0] = 6"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 6,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT6: Prazni nizovi (main) *\/\n_main();",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": "-1\n-1"
+            },
+            "expected": [
+                "Unesite niz A: Unesite niz B: "
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 7,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT7: Unos vise od 100 brojeva (main) *\/\n_main();\n\n\/* Objasnjenje: Prvih 100 brojeva ce biti niz A, zatim ce se nastaviti brojevi u nizu B \n   (posto se ponavljaju biti ce izbaceni) i na kraju brojevi 23 i 24 su u nizu B i \n   nece biti izbaceni *\/",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": "1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 1 2 3 4 5 6 7 8 9 10 23 24 -1"
+            },
+            "expected": [
+                "Unesite niz A: Unesite niz B: 23,24."
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        },
+        {
+            "id": 8,
+            "require_symbols": [],
+            "replace_symbols": [],
+            "code": "\/* AT8: Nista nije izbaceno *\/\nint X[] = {1, 2, 3, 4, 5, 6, 7, 8, 23, 25, 38};\nint Y[] = {12, 13, 14, 15, 16, 17, 18, 19};\nint vel = izbaci_iste_cifre(X, 11, Y, 8);\nint i;\nfor (i=0; i<vel; i++)\n   printf(\"%d \", Y[i]);\n\n\/* Da ne bi prolazilo za funkciju koja ne radi ni\u0161ta.*\/\nY[0]=1;\nvel = izbaci_iste_cifre(X, 11, Y, 8);\nprintf(\"\\nVel: %d\", vel);",
+            "global_above_main": "",
+            "global_top": "",
+            "running_params": {
+                "timeout": "10",
+                "vmem": "1000000",
+                "stdin": ""
+            },
+            "expected": [
+                "12 13 14 15 16 17 18 19 \\nVel: 7"
+            ],
+            "expected_exception": "false",
+            "expected_crash": "false",
+            "ignore_whitespace": "false",
+            "regex": "false",
+            "substring": "false"
+        }
+    ]
+}

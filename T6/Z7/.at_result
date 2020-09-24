@@ -1,0 +1,60 @@
+{
+    "buildhost_description": {
+        "id": "lab002c18",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "gcc (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 4,
+    "compile_result": {
+        "status": 1,
+        "output": "main.c: In function ‘main’:\nmain.c:37:33: warning: iteration 10 invokes undefined behavior [-Waggressive-loop-optimizations]\n     niz[red_min][j]=niz[red_max][j];\n                     ~~~~~~~~~~~~^~~\nmain.c:36:4: note: within this loop\n    for(j=0;j<=10;j++){\n    ^~~",
+        "parsed_output": [
+            {
+                "type": "warning",
+                "file": "main.c",
+                "line": "37",
+                "col": "33",
+                "message": "iteration 10 invokes undefined behavior",
+                "output": "/tmp/buildservice/bs_1169/main.c:37:33: warning: iteration 10 invokes undefined behavior [-Waggressive-loop-optimizations]     niz[red_min][j]=niz[red_max][j];                     ~~~~~~~~~~~~^~~",
+                "code": "niz[red_min][j]=niz[red_max][j];"
+            }
+        ]
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": {
+        "712": {
+            "status": 1,
+            "run_result": {
+                "output": "Unesite elemente matrice: Najmanji i najveci element se nalaze u istom redu.",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "713": {
+            "status": 1,
+            "run_result": {
+                "output": "Unesite elemente matrice: Nakon zamjene matrica glasi:\n1 1 1 1 1 1 1 1 0 1\n1 1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1 1\n10 1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1 1\n1 1 1 1 1 1 1 1 1 1\n",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        }
+    },
+    "queue_items": 0,
+    "time": 1542733012
+}

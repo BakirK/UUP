@@ -1,0 +1,4 @@
+/rhome/b/bkarovic1/workspace/UUP/T3/Z1/main.c: In function ‘main’:
+/rhome/b/bkarovic1/workspace/UUP/T3/Z1/main.c:5:18: warning: unused variable ‘i’ [-Wunused-variable]
+  int broj,suma=0,i;
+                  ^

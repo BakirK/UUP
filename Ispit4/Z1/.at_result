@@ -1,0 +1,172 @@
+{
+    "buildhost_description": {
+        "id": "lab002c18",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n",
+        "compiler_version": "gcc (GCC) 6.2.0",
+        "debugger_version": "GNU gdb (GDB) 7.12",
+        "profiler_version": "valgrind-3.12.0"
+    },
+    "status": 4,
+    "compile_result": {
+        "status": 1,
+        "output": "main.c: In function ‘main’:\nmain.c:52:13: warning: too many arguments for format [-Wformat-extra-args]\n     printf (\"Vel: %d\\n\", vel, *niz2);\n             ^~~~~~~~~~~",
+        "parsed_output": [
+            {
+                "type": "warning",
+                "file": "main.c",
+                "line": "52",
+                "col": "13",
+                "message": "too many arguments for format",
+                "output": "/tmp/buildservice/bs_6808/main.c:52:13: warning: too many arguments for format [-Wformat-extra-args]     printf (\"Vel: %d\\n\", vel, *niz2);             ^~~~~~~~~~~",
+                "code": "printf (\"Vel: %d\\n\", vel, *niz2);"
+            }
+        ]
+    },
+    "run_result": [],
+    "debug_result": [],
+    "profile_result": [],
+    "test_results": {
+        "3037": {
+            "status": 1,
+            "run_result": {
+                "output": "2 3 5 7 92 94 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3038": {
+            "status": 1,
+            "run_result": {
+                "output": "-2 -21 -12 12 -3 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3039": {
+            "status": 1,
+            "run_result": {
+                "output": "331 201 210 20100 401 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3044": {
+            "status": 1,
+            "run_result": {
+                "output": "20 2 331 7 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3045": {
+            "status": 1,
+            "run_result": {
+                "output": "Vel: 0\nVel: 1, niz2[0] = 2",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3046": {
+            "status": 1,
+            "run_result": {
+                "output": "Vel: 0\nVel: 2, niz2[0] = 2, niz2[1] = 501010",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3047": {
+            "status": 1,
+            "run_result": {
+                "output": "niz1: 10 11 12 13 14 15 16 17 \nniz2: 11 12 14 16 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3048": {
+            "status": 1,
+            "run_result": {
+                "output": "999031 -999031 -130999 50505011 -1055501 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3055": {
+            "status": 1,
+            "run_result": {
+                "output": "Broj clanova: 3010\n2 3 5 7 11 12 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        },
+        "3056": {
+            "status": 1,
+            "run_result": {
+                "output": "Broj clanova: 2941\n999031 999037 999040 999046 999055 999059 ",
+                "duration": 0,
+                "status": 1
+            },
+            "debug_result": [],
+            "profile_result": [],
+            "compile_result": {
+                "status": 1,
+                "output": ""
+            }
+        }
+    },
+    "queue_items": 0,
+    "time": 1551256977
+}
